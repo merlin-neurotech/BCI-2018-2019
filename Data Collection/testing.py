@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-streamer = ble2lsl.Streamer(muse2016)
+streamer = ble2lsl.Dummy(muse2016)
 
 
 streamer.subscriptions
