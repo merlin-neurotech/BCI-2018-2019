@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 data = []
-fs = 256  #Sampling frequency. Calculate manually
+fs = 256  #Sampling frequency. Calculated manually
 
 
 for i in range(1,8):
