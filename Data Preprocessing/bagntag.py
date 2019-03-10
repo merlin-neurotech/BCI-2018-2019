@@ -1,7 +1,17 @@
 import pandas as pd
+import numpy as np
+import csv
 
-for patient in range(0,10):
-    data1 = pd.read_csv("Data/Patient" + str(patient) + "/2019-01-15_TimeSeries_Muse-EEG_0.csv")
-    print("Data/Patient" + str(patient) + "/2019-01-15_TimeSeries_Muse-EEG_0.csv")
-    #AllData[i] = data1
-    #AllData[]
+electrodeData = []
+
+for patient in range(1,4):
+    data = pd.read_csv("Muse Data/p"+str(patient)+"_f_EEG.csv") #Read data from csv
+    #data = data.values #convert pandas dataframe to numpy array
+    electrodeData.append(data)
+    date = pd.read_csv("Muse Data/p" + str(patient) + "_r_EEG.csv")  # Read data from csv
+    #data = data.values  # convert pandas dataframe to numpy array
+    electrodeData.append(data)
+
+electrodeData = pd.DataFrame(electrodeData)
+electrodeData.to_csv('electrodeData.csv')
+
