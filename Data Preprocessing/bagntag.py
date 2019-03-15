@@ -27,4 +27,4 @@ def bag_and_tag(num_of_patients):
             trial_count = 0
             for trials in range(0, len(subfolders), 2):
                 file_data = pd.read_csv(trials)
-                tagged.append((trial_count, file_data.shape, len(file_data[0])))
+                focus_relaxed.append((trial_count, file_data.shape, len(file_data[0])))
