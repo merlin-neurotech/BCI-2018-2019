@@ -17,7 +17,7 @@ electrodeData = []
 # electrodeData.to_csv('electrodeData.csv')
 
 
-def bag_and_tag(num_of_patients):
+def bag_and_tag(num_of_patients): #shrey wrote this
     matrices = []
     labels = []
     for i in range(num_of_patients +1):
