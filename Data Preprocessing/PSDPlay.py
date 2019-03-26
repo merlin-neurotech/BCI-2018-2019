@@ -3,20 +3,9 @@ from scipy import pi
 import pandas as pd
 import numpy as np
 
-def bandpass(x, axis, low: float, high: float, transition: float, fs: float):
-    #determine required order of filter and Wn,
-    #Wn is a scalar or length-2 sequence giving the critical frequencies. For a Butterworth filter, this is the point at which the gain drops to to the -3dB point of the passband
-    n, wn = signal.buttord(wp=[low*2/fs, high*2/fs], ws=[(low-transition)*2/fs, (high+transition)*2/fs], gpass=3, gstop=40, analog=False, fs=fs)
-    b, a = signal.butter(N=n, Wn=wn, btype='bandpass', analog=False, output='ba', fs=fs)
-    filteredSignal = signal.lfilter(b, a, axis)
-    return filteredSignal
 
 
-spectrogramData = []
-PSDData = []
-electrodeData = np.zeros()
-fs = 256  #Sampling frequency. Calculated manually
-
+electrodeData = []
 
 for i in range(1,4):
     data = pd.read_csv("Muse Data/p"+str(i)+"_f_EEG.csv") #Read data from csv
